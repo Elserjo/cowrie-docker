@@ -1,0 +1,11 @@
+services:
+  cowrie:
+    image: cowrie/cowrie@sha256:da466d522916ad86184de6b6681e6cdf1f9b0568c962f8b59a0e82145fc04fbc
+    ports:
+      - "22:2222"
+    container_name: cowrie
+    volumes:
+      - type: bind
+        source: ./etc
+        target: /cowrie/cowrie-git/etc
+    restart: unless-stopped
